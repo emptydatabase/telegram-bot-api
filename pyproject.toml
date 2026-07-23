@@ -10,13 +10,16 @@ authors = [
 ]
 description = "A telegram bot client"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
 license = "GPL-3.0-only"
 license-files = ["LICEN[CS]E*"]
+dependencies = [
+  "requests"
+]
 
 [project.urls]
 Homepage = "https://github.com/emptydatabase/telegram-bot-api"

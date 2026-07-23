@@ -4,7 +4,7 @@ from types import FunctionType
 
 from requests import Session
 
-from .serializable import Serializable, SerializableJSON
+from .serializable import Serializable, SerializableJSON, SerializableInputFile
 from .types import Update, Message, Chat, ReplyMarkup, is_inline_keyboard_markup
 
 
@@ -81,3 +81,23 @@ class TelegramClient:
         if reply_markup and is_inline_keyboard_markup(reply_markup.value):
             message["reply_markup"] = reply_markup.value
         return message
+
+    @api
+    def set_webhook(
+            self, *,
+            url: str,
+            certificate: SerializableInputFile | str | None = None,
+            ip_address: str | None = None,
+            max_connections: int | None = None,
+            allowed_updates: list[str] | None = None,
+            drop_pending_updates: bool | None = None,
+            secret_token: str | None = None,
+    ) -> bool:
+        return True
+
+    @api
+    def delete_webhook(
+            self, *,
+            drop_pending_updates: bool | None = None,
+    ) -> bool:
+        return True

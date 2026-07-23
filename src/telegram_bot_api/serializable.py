@@ -17,4 +17,9 @@ class SerializableJSON[T](Serializable):
 
 
 class SerializableInputFile(Serializable):
-    pass
+    def __init__(self, path: str):
+        self.path = path
+
+    def serialize(self, name: str, params: dict, files: dict):
+        with open(self.path, "rb") as f:
+            files[name] = f.read()

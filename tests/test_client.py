@@ -1,6 +1,6 @@
 import os
 from collections.abc import Callable
-from typing import Any, Concatenate
+from typing import Any
 
 from dotenv import load_dotenv
 
